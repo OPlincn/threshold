@@ -54,10 +54,10 @@ int main(int argc, char **argv) {
   image_transport::ImageTransport it(nh);
   
   // 订阅摄像头图像话题
-  image_transport::Subscriber sub = it.subscribe("/usb_cam/image_raw", 1, imageCallback);
+  image_transport::Subscriber sub = it.subscribe("/contrast/image", 1, imageCallback);
 
   // 订阅相机信息话题
-  ros::Subscriber camera_info_sub = nh.subscribe("/usb_cam/camera_info", 1, cameraInfoCallback);
+  ros::Subscriber camera_info_sub = nh.subscribe("/contrast/camera_info", 1, cameraInfoCallback);
 
   // 创建图像发布者
   pub = it.advertise("/threshold/image", 1);
